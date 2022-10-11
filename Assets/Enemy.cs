@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private float animationState = 0.25f;
+    private int animationCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,21 +16,33 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
+        animationCounter++;
+        if (animationCounter > 20)
+        {
+            animationState = -animationState;
+            transform.position = new Vector3(
+                transform.position.x + animationState,
+                transform.position.y,
+                0.0f
+            );
+            animationCounter = 0;
+        }
         
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("top of switch");
         switch (other.tag)
         {
             default:
-                print("default case");
                 break;
 
             case "PlayerBullet":
-                print("PlayerBullet case");
-                Destroy(other.gameObject);
                 Destroy(this.gameObject);
                 break;
         }

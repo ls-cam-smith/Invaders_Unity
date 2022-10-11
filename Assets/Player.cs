@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
             bullet.tag = "PlayerBullet";
         }
 
+        
+    }
+
+    private void FixedUpdate()
+    {
         float movement = Input.GetAxis("Horizontal");
         Vector2 force = new Vector2(movement, 0.0f);
         body.AddForce(force);

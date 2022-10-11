@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
       propertyPath: m_Mass
-      value: 0.1
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
       propertyPath: m_BodyType
@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
       propertyPath: m_Constraints
