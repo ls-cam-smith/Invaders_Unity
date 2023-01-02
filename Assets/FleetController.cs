@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -26,5 +27,14 @@ public class FleetController : MonoBehaviour
     public void UpdateDirection()
     {
         direction = -direction;
+        direction += Vector2.down;
+        Task.Delay(500).ContinueWith(
+            t => ResetYAxis()
+        );
+    }
+
+    private void ResetYAxis()
+    {
+        direction.y = 0f;
     }
 }
