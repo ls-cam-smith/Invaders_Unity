@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using static Enemy;
 
 
 // I kind of want this class to keep track of which way the fleet is moving,
@@ -11,11 +13,24 @@ using UnityEngine;
 public class FleetController : MonoBehaviour
 {
     public Vector2 direction = Vector2.right;
+    // Not sure about the type here, just going off what worked for Snake...
+    public Enemy enemyShipPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        foreach (var new_x in Enumerable.Range(0, 8).Where(i => i % 2 == 0))
+        {
+            var position = new Vector3((float) new_x, 4f, 0f);
+            Enemy newChildEnemy = Instantiate(
+                enemyShipPrefab,
+                position,
+                Quaternion.identity
+            );
+            newChildEnemy.fleetController = this;
+
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +41,7 @@ public class FleetController : MonoBehaviour
 
     public void UpdateDirection()
     {
+        Debug.Log("Updating Fleet direction");
         direction = -direction;
         direction += Vector2.down;
         Task.Delay(500).ContinueWith(

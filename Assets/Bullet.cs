@@ -24,15 +24,14 @@ public class Bullet : MonoBehaviour
     {
         switch (other.tag)
         {
-            default:
-                break;
-
             case "Enemy":
                 Destroy(this.gameObject);
                 break;
 
             case "Wall":
                 Destroy(this.gameObject);
+                break;
+            default:
                 break;
         }
     }

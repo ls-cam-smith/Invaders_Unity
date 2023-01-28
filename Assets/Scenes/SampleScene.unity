@@ -135,14 +135,6 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3334543231097069130, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3334543231097069130, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3334543231097069130, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -181,10 +173,6 @@ PrefabInstance:
     - target: {fileID: 3334543231097069130, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4885980023155882064, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8165032820564178262, guid: 4fd05ca2027014f4ea544b6c9411b2ed, type: 3}
       propertyPath: m_Name
@@ -307,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
+  enemyShipPrefab: {fileID: 868653208605072500, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
 --- !u!4 &713296840
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713296838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01679789, y: 0.0065040537, z: 0.00000021621236}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -329,22 +318,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
-      propertyPath: m_Mass
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
-      propertyPath: m_LinearDrag
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 865476874133681484, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5187366110681847774, guid: be5c983e7c4814514848f9a18e663e43, type: 3}
       propertyPath: m_Name
       value: Player
@@ -680,10 +653,6 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 233573610904358478, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 233573610904358478, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
@@ -691,13 +660,13 @@ PrefabInstance:
       propertyPath: fleetController
       value: 
       objectReference: {fileID: 713296839}
-    - target: {fileID: 1811428803770660901, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2647853230443627341, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647853230443627341, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6251175776153509616, guid: 9e2d5a14d12bb440d9e45b4e0804401b, type: 3}
       propertyPath: m_RootOrder

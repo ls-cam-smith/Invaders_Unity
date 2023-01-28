@@ -35,28 +35,30 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (other.tag)
+        switch (collision.tag)
         {
-            default:
-                break;
-
             case "PlayerBullet":
                 Destroy(this.gameObject);
                 break;
+            default:
+                break;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        switch (other.tag)
+        Debug.Log("Exiting a 2d trigger");
+        switch (collision.tag)
         {
-            default:
-                break;
             case "FleetArea":
+                Debug.Log("FleetArea departed");
                 fleetController.UpdateDirection();
+                break;
+            default:
                 break;
         }
     }
+
 }
