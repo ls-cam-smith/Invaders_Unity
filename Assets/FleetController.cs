@@ -44,7 +44,7 @@ public class FleetController : MonoBehaviour
         Debug.Log("Updating Fleet direction");
         direction = -direction;
         direction += Vector2.down;
-        Task.Delay(500).ContinueWith(
+        Task.Delay(250).ContinueWith(
             t => ResetYAxis()
         );
     }
