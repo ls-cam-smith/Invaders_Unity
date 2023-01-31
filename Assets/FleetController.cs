@@ -33,12 +33,6 @@ public class FleetController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateDirection()
     {
         Debug.Log("Updating Fleet direction");

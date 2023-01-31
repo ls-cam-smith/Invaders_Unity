@@ -8,12 +8,6 @@ public class Enemy : MonoBehaviour
     public FleetController fleetController;
     private int animationCounter;
 
-    public void ChangeDirection()
-    {
-        Debug.Log("Changing direction!");
-        fleetController.UpdateDirection();
-    }
-
     private void FixedUpdate()
     {
         animationCounter++;
@@ -35,6 +29,9 @@ public class Enemy : MonoBehaviour
         {
             case "PlayerBullet":
                 Destroy(this.gameObject);
+                break;
+            case "Wall":
+                fleetController.UpdateDirection();
                 break;
             default:
                 break;

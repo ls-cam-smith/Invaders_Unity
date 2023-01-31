@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3469823281871164430}
   - component: {fileID: 8933465333674226472}
-  - component: {fileID: 4244728890948169725}
   m_Layer: 0
   m_Name: Sensor Left
   m_TagString: Untagged
@@ -59,18 +58,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4244728890948169725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472490723686627291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee7f6fd3b9724be4966dd4d4bb27167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2647853230443627341
 GameObject:
   m_ObjectHideFlags: 0
