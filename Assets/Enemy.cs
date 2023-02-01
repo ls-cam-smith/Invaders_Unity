@@ -19,12 +19,6 @@ public class Enemy : MonoBehaviour
         }   
     }
 
-    public void UpdateDirection()
-    {
-        Debug.Log("Changing direction!");
-        fleetController.UpdateDirection();
-    }
-
     // The Enemy prefab has two sensors out one unit to the left, and one unit
     // to the right, so we will detect a collision with the wall two steps
     // before it would happen

@@ -14,7 +14,7 @@ public class EnemySensor : MonoBehaviour
     {
         if (collision.tag == "Wall")
         {
-            parent.UpdateDirection();
+            parent.fleetController.UpdateDirection();
         }
     }
 
