@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using static Enemy;
 
 
 // I kind of want this class to keep track of which way the fleet is moving,
