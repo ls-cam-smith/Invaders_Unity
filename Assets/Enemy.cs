@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float animationState = 0.5f;
     public FleetController fleetController;
     private int animationCounter;
 
@@ -19,19 +18,24 @@ public class Enemy : MonoBehaviour
             );
 
             animationCounter = 0;
-        }
-        
+        }   
     }
 
+    public void UpdateDirection()
+    {
+        Debug.Log("Changing direction!");
+        fleetController.UpdateDirection();
+    }
+
+    // The Enemy prefab has two sensors out one unit to the left, and one unit
+    // to the right, so we will detect a collision with the wall two steps
+    // before it would happen
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "PlayerBullet":
                 Destroy(this.gameObject);
-                break;
-            case "Wall":
-                fleetController.UpdateDirection();
                 break;
             default:
                 break;

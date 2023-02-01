@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ public class FleetController : MonoBehaviour
     void Start()
     {
 
-        foreach (var new_x in Enumerable.Range(0, 8).Where(i => i % 2 == 0))
+        foreach (var new_x in Enumerable.Range(-6, 14).Where(i => Math.Abs(i) % 2 == 0))
         {
             var position = new Vector3((float) new_x, 4f, 0f);
             Enemy newChildEnemy = Instantiate(
