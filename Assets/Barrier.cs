@@ -6,7 +6,6 @@ public class Barrier : MonoBehaviour
     public int maxHitPoints = 5;
     public int currentHitPoints;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHitPoints = maxHitPoints;

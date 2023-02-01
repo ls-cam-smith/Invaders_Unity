@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using static Enemy;
 
 
 // I kind of want this class to keep track of which way the fleet is moving,
@@ -20,7 +18,7 @@ public class FleetController : MonoBehaviour
     void Start()
     {
 
-        foreach (var new_x in Enumerable.Range(0, 8).Where(i => i % 2 == 0))
+        foreach (var new_x in Enumerable.Range(-6, 14).Where(i => Math.Abs(i) % 2 == 0))
         {
             var position = new Vector3((float) new_x, 4f, 0f);
             Enemy newChildEnemy = Instantiate(
@@ -33,18 +31,12 @@ public class FleetController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateDirection()
     {
         Debug.Log("Updating Fleet direction");
         direction = -direction;
         direction += Vector2.down;
-        Task.Delay(500).ContinueWith(
+        Task.Delay(250).ContinueWith(
             t => ResetYAxis()
         );
     }

@@ -1,24 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float animationState = 0.5f;
     public FleetController fleetController;
     private int animationCounter;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FixedUpdate()
     {
@@ -31,30 +16,24 @@ public class Enemy : MonoBehaviour
             );
 
             animationCounter = 0;
-        }
-        
+        }   
     }
 
+    public void UpdateDirection()
+    {
+        Debug.Log("Changing direction!");
+        fleetController.UpdateDirection();
+    }
+
+    // The Enemy prefab has two sensors out one unit to the left, and one unit
+    // to the right, so we will detect a collision with the wall two steps
+    // before it would happen
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "PlayerBullet":
                 Destroy(this.gameObject);
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log("Exiting a 2d trigger");
-        switch (collision.tag)
-        {
-            case "FleetArea":
-                Debug.Log("FleetArea departed");
-                fleetController.UpdateDirection();
                 break;
             default:
                 break;
