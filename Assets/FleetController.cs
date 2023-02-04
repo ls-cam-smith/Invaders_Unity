@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -13,12 +14,12 @@ public class FleetController : MonoBehaviour
     public Vector2 direction = Vector2.right;
     // Not sure about the type here, just going off what worked for Snake...
     public Enemy enemyShipPrefab;
+    private List<Enemy> enemies = new List<Enemy>();
 
     // Start is called before the first frame update
     void Start()
     {
-
-        foreach (var new_x in Enumerable.Range(-6, 14).Where(i => Math.Abs(i) % 2 == 0))
+        foreach (var new_x in Enumerable.Range(-6, 8).Where(i => Math.Abs(i) % 1 == 0))
         {
             var position = new Vector3((float) new_x, 4f, 0f);
             Enemy newChildEnemy = Instantiate(
@@ -28,21 +29,26 @@ public class FleetController : MonoBehaviour
             );
             newChildEnemy.fleetController = this;
 
+            enemies.Add(newChildEnemy);
+
         }
     }
 
     public void UpdateDirection()
     {
         Debug.Log("Updating Fleet direction");
-        direction = -direction;
-        direction += Vector2.down;
-        Task.Delay(250).ContinueWith(
-            t => ResetYAxis()
-        );
-    }
+        Debug.Log(enemies.Count);
+        var nextDirection = -direction;
+        direction = Vector2.zero;
+        //direction = -direction;
 
-    private void ResetYAxis()
-    {
-        direction.y = 0f;
+        foreach (var e in enemies)
+        {
+            e.transform.Translate(0.0f, -0.5f, 0.0f);
+        }
+
+        Task.Delay(500).ContinueWith(
+            tag => direction = nextDirection
+        );
     }
 }
